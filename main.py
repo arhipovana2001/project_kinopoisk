@@ -31,12 +31,11 @@ def main():
     actors_set = {}
     with open('input.txt', encoding='utf-8') as inp:
         k = 0
-        text = []
         for line in inp.readlines():
-            if k % 2 == 0:                                                          # this is film
+            if k % 2 == 0:
                 film = line[:-1]
                 films_set[film] = ''
-            else:                                                                   # this is actors
+            else:
                 actors_old = line.split(', ')
                 actors = []
                 for i in actors_old:
