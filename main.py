@@ -7,7 +7,10 @@ def main():
 
     def function2(film1, film2, actor1, actor2):
         a = films_set[film1] & films_set[film2]
-        print(', '.join(a))
+        if len(a) > 0:
+            print(', '.join(a))
+        else:
+            print('В фильмах снимались разные актёры.')
 
     def function3(film1, film2, actor1, actor2):
         a = films_set[film1] - films_set[film2]
@@ -21,7 +24,10 @@ def main():
 
     def function5(film1, film2, actor1, actor2):
         f = actors_set[actor1] & actors_set[actor2]
-        print(', '.join(f))
+        if len(f) > 0:
+            print(', '.join(f))
+        else:
+            print('У актеров нет общих фильмов.')
 
     def function6(film1, film2, actor1, actor2):
         f = actors_set[actor1] - actors_set[actor2]
