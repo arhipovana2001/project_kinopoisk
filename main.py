@@ -1,3 +1,6 @@
+import local as lc
+
+
 def main():
     def functon1(film1, film2, actor1, actor2):
         print(film1 + ' - ', end='')
@@ -10,7 +13,7 @@ def main():
         if len(a) > 0:
             print(', '.join(a))
         else:
-            print('В фильмах снимались разные актёры.')
+            print(lc.FUNCTION2)
 
     def function3(film1, film2, actor1, actor2):
         a = films_set[film1] - films_set[film2]
@@ -27,7 +30,7 @@ def main():
         if len(f) > 0:
             print(', '.join(f))
         else:
-            print('У актеров нет общих фильмов.')
+            print(lc.FUNCTION5)
 
     def function6(film1, film2, actor1, actor2):
         f = actors_set[actor1] - actors_set[actor2]
@@ -61,18 +64,30 @@ def main():
             if actor in films_set[film]:
                 actors_set[actor].add(film)
 
-    film1 = str(input('Введите название первого фильма: '))
-    film2 = str(input('Введите название второго фильма: '))
-    actor1 = str(input('Введите имя первого актера: '))
-    actor2 = str(input('Введите имя второго актера: '))
-    print('''1. Определить общий актерский состав, снимавшихся хотя бы в одном из этих двух фильмах.''')
-    print('''2. Определить актеров, снимавшихся и в первом, и во втором фильме.''')
-    print('''3. Определить актеров, участвующих в съемках первого, но не участвующих в съемках второго.''')
-    print('''4. Определить названия фильмов, в которых снимался хотя бы в одном из актеров.''')
-    print('''5. Определить названия фильмов, в которых снимались оба актера.''')
-    print('''6. Определить названия фильмов, в которых снимался первый актер, но не участвовал в съемках второй.''')
-    print('''7. Выйти из программы''')
-    choice = int(input('Выберите, что вы хотите сделать: '))
+    film1 = str(input(lc.FILM1))
+    while film1 not in films_set:
+        print(lc.FILM1ERROR, end='')
+        film1 = str(input())
+    film2 = str(input(lc.FILM2))
+    while film2 not in films_set:
+        print(lc.FILM2ERROR, end='')
+        film2 = str(input())
+    actor1 = str(input(lc.ACTOR1))
+    while actor1 not in actors_set:
+        print(lc.ACTOR1ERROR, end='')
+        actor1 = str(input())
+    actor2 = str(input(lc.ACTOR2))
+    while actor2 not in actors_set:
+        print(lc.ACTOR2ERROR, end='')
+        actor2 = str(input())
+    print(lc.MENU1)
+    print(lc.MENU2)
+    print(lc.MENU3)
+    print(lc.MENU4)
+    print(lc.MENU5)
+    print(lc.MENU6)
+    print(lc.MENU7)
+    choice = int(input(lc.CHOICE))
 
     while choice != 7:
         if choice == 1:
@@ -87,7 +102,9 @@ def main():
             function5(film1, film2, actor1, actor2)
         elif choice == 6:
             function6(film1, film2, actor1, actor2)
-        choice = int(input('Выберите, что вы хотите сделать: '))
+        elif choice < 1 or choice > 7:
+            print(lc.ERROR)
+        choice = int(input(lc.CHOICE))
     else:
         exit()
 
