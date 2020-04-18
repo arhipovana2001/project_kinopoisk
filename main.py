@@ -68,18 +68,22 @@ def main():
     while film1 not in films_set:
         print(lc.FILM1ERROR, end='')
         film1 = str(input())
+
     film2 = str(input(lc.FILM2))
     while film2 not in films_set:
         print(lc.FILM2ERROR, end='')
         film2 = str(input())
+
     actor1 = str(input(lc.ACTOR1))
     while actor1 not in actors_set:
         print(lc.ACTOR1ERROR, end='')
         actor1 = str(input())
+
     actor2 = str(input(lc.ACTOR2))
     while actor2 not in actors_set:
         print(lc.ACTOR2ERROR, end='')
         actor2 = str(input())
+
     print(lc.MENU1)
     print(lc.MENU2)
     print(lc.MENU3)
