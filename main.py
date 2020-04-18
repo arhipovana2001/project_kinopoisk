@@ -2,7 +2,7 @@ import local as lc
 
 
 def main():
-    def functon1(film1, film2, actor1, actor2):
+    def function1(film1, film2, actor1, actor2):
         print(film1 + ' - ', end='')
         print(', '.join(films_set[film1]))
         print(film2 + ' - ', end='')
@@ -91,7 +91,7 @@ def main():
 
     while choice != 7:
         if choice == 1:
-            functon1(film1, film2, actor1, actor2)
+            function1(film1, film2, actor1, actor2)
         elif choice == 2:
             function2(film1, film2, actor1, actor2)
         elif choice == 3:
